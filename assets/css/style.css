@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eeaeca;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 0.8) 0%,
+
+    rgba(148, 187, 233, 0.8) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+article {
+  width: 360px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.user-card {
+  background-color: rgb(236, 242, 248);
+  overflow: hidden;
+
+  padding-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.card-wrapper {
+  padding: 10px 20px;
+}
+.card-header {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+
+  background-color: rgb(255, 255, 255);
+}
+
+.photo-avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.base-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.username,
+.birthdate,
+p {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.card-btn {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-heart,
+.btn-subscribe,
+.btn-contacts {
+  flex: 1;
+  font-size: 13px;
+  border: none;
+  border-radius: 10px;
+  background-color: #83b3e9;
+  color: #ffffff;
+  padding: 8px 5px;
+  font-size: 11px;
+}
+
+.card-btn button:hover {
+  background-color: #82c49a;
+  color: #ffffff;
+}
+.btn-heart {
+  font-size: 20px;
+}
+
+.links-container {
+  display: flex;
+  gap: 8px;
+}
+
+.links-container a {
+  flex: 1;
+  font-size: 13px;
+  text-align: center;
+}
+
+.links-container a:hover {
+  color: #095224;
+}
