@@ -1,3 +1,5 @@
+// 2. Підписка
+
 btnSub = document.querySelector(".btn-subscribe");
 
 btnSub.onclick = function changesubscribe(e) {
@@ -9,3 +11,11 @@ btnSub.onclick = function changesubscribe(e) {
     btnSub.style.backgroundColor = "";
   }
 };
+
+// 3. Вподобання
+
+btnHeart = document.querySelector(".btn-heart");
+
+btnHeart.addEventListener("click", () => {
+  btnHeart.classList.toggle("btn-heartActive");
+});
