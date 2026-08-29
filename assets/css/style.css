@@ -118,3 +118,7 @@ p {
 .links-container a:hover {
   color: #095224;
 }
+
+.card-contacts-hidden {
+  display: none;
+}

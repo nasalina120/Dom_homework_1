@@ -23,8 +23,6 @@ btnHeart.addEventListener("click", () => {
 // 4. Додаткова інформація
 // Номер телефону
 
-//   <p class="phoneNum"> +38-066-125-667</p>
-
 const phoneNumber = document.querySelector(".phoneNum");
 const originalNum = phoneNumber.textContent;
 let operator = "";
@@ -48,3 +46,19 @@ const dateParts = birthDate.textContent.split(".");
 const yearBirth = parseInt(dateParts[dateParts.length - 1]);
 const currentYear = new Date().getFullYear();
 birthDate.title = `Вік: ${currentYear - yearBirth} років`;
+
+// 5.  Показати контакти
+const btnContacts = document.querySelector(".btn-contacts");
+const contactsSection = document.querySelector(".card-contacts");
+
+btnContacts.onclick = function changeContactHidden(e) {
+  contactsSection.classList.toggle("card-contacts-hidden");
+
+  if (contactsSection.classList.contains("card-contacts-hidden")) {
+    btnContacts.textContent = "Показати контакти";
+    btnContacts.style.backgroundColor = "";
+  } else {
+    btnContacts.textContent = "Приховати контакти";
+    btnContacts.style.backgroundColor = "pink";
+  }
+};
