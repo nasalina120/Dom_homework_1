@@ -109,7 +109,9 @@ p {
   gap: 8px;
 }
 
-.links-container a {
+.profile-link,
+.publications-link,
+.projects-link {
   flex: 1;
   font-size: 13px;
   text-align: center;

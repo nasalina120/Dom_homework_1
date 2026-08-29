@@ -62,3 +62,26 @@ btnContacts.onclick = function changeContactHidden(e) {
     btnContacts.style.backgroundColor = "pink";
   }
 };
+
+// 6 Робота з подіями
+let clickprofile = 0;
+let clickPublications = 0;
+let clickProjects = 0;
+
+const profileLink = document.querySelector(".profile-link");
+profileLink.addEventListener("click", () => {
+  clickprofile++;
+  console.log("click profileLink :>> ", clickprofile);
+});
+
+const publicationsLink = document.querySelector(".publications-link");
+publicationsLink.addEventListener("click", () => {
+  clickPublications++;
+  console.log("click publications :>> ", clickPublications);
+});
+
+const projectsLink = document.querySelector(".projects-link");
+projectsLink.addEventListener("click", () => {
+  clickProjects++;
+  console.log("click projects:>> ", clickProjects);
+});
