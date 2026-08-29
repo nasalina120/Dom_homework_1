@@ -22,10 +22,21 @@ btnHeart.addEventListener("click", () => {
 
 // 4. Додаткова інформація
 // Номер телефону
+
+//   <p class="phoneNum"> +38-066-125-667</p>
+
 const phoneNumber = document.querySelector(".phoneNum");
 const originalNum = phoneNumber.textContent;
+let operator = "";
 phoneNumber.addEventListener("mouseenter", () => {
-  phoneNumber.textContent = " (Kyivstar) " + originalNum;
+  const operatorCode = originalNum.slice(4, 7);
+  if (operatorCode === "067" || operatorCode === "068") {
+    operator = "Київстар";
+  }
+  if (operatorCode === "050" || operatorCode === "066") {
+    operator = "Vodafone Україна";
+  }
+  phoneNumber.textContent = originalNum + " (" + operator + ")";
 });
 phoneNumber.addEventListener("mouseleave", () => {
   phoneNumber.textContent = originalNum;
