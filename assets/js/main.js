@@ -20,6 +20,8 @@ btnHeart.addEventListener("click", () => {
   btnHeart.classList.toggle("btn-heartActive");
 });
 
+// 4. Додаткова інформація
+// Номер телефону
 const phoneNumber = document.querySelector(".phoneNum");
 const originalNum = phoneNumber.textContent;
 phoneNumber.addEventListener("mouseenter", () => {
@@ -29,16 +31,9 @@ phoneNumber.addEventListener("mouseleave", () => {
   phoneNumber.textContent = originalNum;
 });
 
-// 4. ✅ Додаткова інформація
-
-// Номер телефону
-// При наведенні на номер телефону (mouseenter) перед ним повинна з'являтися
-// назва мобільного оператора:
-// Kyivstar: +380 XX XXX XX XX
-// При відведенні курсору (mouseleave) назва оператора повинна зникати,
-// залишаючи лише номер телефону.
-// Примітка: визначайте мобільного оператора за кодом номера телефону.
-//  Можливість перенесення номера між операторами не враховуйте.
-
 // Дата народження
-// Додайте до дати народження атрибут title, у якому буде зазначено вік користувача.
+const birthDate = document.querySelector(".birthdate");
+const dateParts = birthDate.textContent.split(".");
+const yearBirth = parseInt(dateParts[dateParts.length - 1]);
+const currentYear = new Date().getFullYear();
+birthDate.title = `Вік: ${currentYear - yearBirth} років`;
