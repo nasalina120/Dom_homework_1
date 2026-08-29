@@ -15,9 +15,16 @@ btnSub.onclick = function changesubscribe(e) {
 // 3. Вподобання
 
 const btnHeart = document.querySelector(".btn-heart");
-
+const likesElement = document.querySelector(".countlikes");
+let likes = parseInt(likesElement.textContent);
 btnHeart.addEventListener("click", () => {
   btnHeart.classList.toggle("btn-heartActive");
+  if (btnHeart.classList.contains("btn-heartActive")) {
+    likes++;
+  } else {
+    likes--;
+  }
+  likesElement.textContent = likes;
 });
 
 // 4. Додаткова інформація
