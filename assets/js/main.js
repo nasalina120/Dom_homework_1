@@ -31,21 +31,30 @@ btnHeart.addEventListener("click", () => {
 // Номер телефону
 
 const phoneNumber = document.querySelector(".phoneNum");
-const originalNum = phoneNumber.textContent;
-let operator = "";
-phoneNumber.addEventListener("mouseenter", () => {
+
+if (phoneNumber) {
+  const originalNum = phoneNumber.textContent.trim();
   const operatorCode = originalNum.slice(4, 7);
+  let operator = "";
+
   if (operatorCode === "067" || operatorCode === "068") {
     operator = "Київстар";
+  } else if (operatorCode === "050" || operatorCode === "066") {
+    operator = "Vodafone";
+  } else if (operatorCode === "063" || operatorCode === "073") {
+    operator = "Lifecell";
   }
-  if (operatorCode === "050" || operatorCode === "066") {
-    operator = "Vodafone Україна";
-  }
-  phoneNumber.textContent = originalNum + " (" + operator + ")";
-});
-phoneNumber.addEventListener("mouseleave", () => {
-  phoneNumber.textContent = originalNum;
-});
+
+  phoneNumber.addEventListener("mouseenter", () => {
+    if (operator) {
+      phoneNumber.textContent = originalNum + " (" + operator + ")";
+    }
+  });
+
+  phoneNumber.addEventListener("mouseleave", () => {
+    phoneNumber.textContent = originalNum;
+  });
+}
 
 // Дата народження
 const birthDate = document.querySelector(".birthdate");
